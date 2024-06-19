@@ -30,15 +30,9 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
 // MongoDB Connection
-const uri =process.env.MONGODB_URI || 'mongodb+srv://orhorovitz123:NLxltDZQ8E9mtFJf@cluster0.t0r5fi2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
-//    'mongodb+srv://orhorovitz123:NLxltDZQ8E9mtFJf@cluster0.t0r5fi2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const uri = process.env.MONGODB_URI || 'mongodb+srv://orhorovitz123:NLxltDZQ8E9mtFJf@cluster0.t0r5fi2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
-//mongoose.set('bufferCommands', false);
-
-// try to connect to MongoDB
 mongoose.connect(uri, {
-  //useNewUrlParser: true,
-  //useUnifiedTopology: true,
   serverSelectionTimeoutMS: 5000,
   socketTimeoutMS: 45000,
 }).then(() => {
